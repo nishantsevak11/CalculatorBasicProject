@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <button id="mode" onclick="toggleMode()">Mode</button>
+        <input type="text" id="display">
+        <div class="button-section">
+            <button class="row top-row" onclick="clearDisplay()">C</button>
+            <button class="row top-row" onclick="appendToDisplay('%')">%</button>
+            <button class="row top-row" onclick="appendToDisplay('/')">/</button>
+            <button class="row right-row" onclick="appendToDisplay('*')">X</button>
+            <button class="numbers" onclick="appendToDisplay('1')">1</button>
+            <button class="numbers" onclick="appendToDisplay('2')">2</button>
+            <button class="numbers" onclick="appendToDisplay('3')">3</button>
+            <button class="row right-row" onclick="appendToDisplay('-')">-</button>
+            <button class="numbers" onclick="appendToDisplay('4')">4</button>
+            <button class="numbers" onclick="appendToDisplay('5')">5</button>
+            <button class="numbers" onclick="appendToDisplay('6')">6</button>
+            <button class="row right-row" onclick="appendToDisplay('+')">+</button>
+            <button class="numbers" onclick="appendToDisplay('7')">7</button>
+            <button class="numbers" onclick="appendToDisplay('8')">8</button>
+            <button class="numbers" onclick="appendToDisplay('9')">9</button>
+            <button class="row right-row" onclick="calculateResult()">=</button>
+            <button class="numbers" onclick="appendToDisplay('0')">0</button>
+            <button class="numbers" onclick="appendToDisplay('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        let currentdisplay = '';
+
+        function clearDisplay() {
+            currentdisplay = '';
+            document.querySelector('#display').value = currentdisplay;
+        }
+
+        function appendToDisplay(value) {
+            currentdisplay += value;
+            document.querySelector('#display').value = currentdisplay;
+        }
+
+        function calculateResult() {
+            try {
+                let result = eval(currentdisplay);
+                currentdisplay = result;
+                document.querySelector('#display').value = result;
+            } catch (e) {
+                document.querySelector('#display').value = 'Error';
+            }
+        }
+
+        function toggleMode() {
+            const calculator = document.querySelector('.calculator');
+            calculator.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+
+</html>

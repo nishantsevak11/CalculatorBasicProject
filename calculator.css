@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.calculator {
+    width: 80%;
+    height: 90vh;
+    margin: 20px auto;
+    border-radius: 25px;
+    background-color: #303f3d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: background-color 0.3s ease;
+}
+
+.button-section {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #383637;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.row {
+    background-color: #d56b02;
+}
+
+.top-row {
+    background-color: #4e5565;
+}
+
+.numbers {
+    background-color: #383637;
+}
+
+#display {
+    padding: 20px;
+    width: 100%;
+    height: 15vh;
+    background-color: #303f3d;
+    border: none;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+}
+
+#mode {
+    width: 80px;
+    padding: 3px;
+    font-size: 15px;
+    margin-bottom: auto;
+    border-radius: 20px;
+    background-color: #383637;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+}
+
+/* Light mode styles */
+.light-mode {
+    background-color: white;
+}
+
+.light-mode .calculator {
+    background-color: white;
+}
+
+.light-mode .numbers {
+    background-color: #e8e8f0;
+    color: black;
+}
+
+.light-mode .row {
+    background-color: #d56b02;
+}
+
+.light-mode .top-row {
+    background-color: #4e5565;
+}
+
+.light-mode #display {
+    background-color: white;
+    color: black;
+}
