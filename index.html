@@ -34,8 +34,16 @@
         </div>
     </div>
 
-    <script>
+     <script>
         let currentdisplay = '';
+
+        // Check localStorage for saved mode and apply it on page load
+        window.onload = function () {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'light') {
+                document.querySelector('.calculator').classList.add('light-mode');
+            }
+        }
 
         function clearDisplay() {
             currentdisplay = '';
@@ -57,9 +65,17 @@
             }
         }
 
+        // Toggle between light and dark modes and save the current mode in localStorage
         function toggleMode() {
             const calculator = document.querySelector('.calculator');
             calculator.classList.toggle('light-mode');
+
+            // Save the current mode in localStorage
+            if (calculator.classList.contains('light-mode')) {
+                localStorage.setItem('mode', 'light');
+            } else {
+                localStorage.setItem('mode', 'dark');
+            }
         }
     </script>
 </body>
